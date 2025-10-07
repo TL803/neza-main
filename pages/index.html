@@ -35,8 +35,7 @@
 
 <body class="font-sans  text-[#01101B]">
 
-    <header
-        class="container mx-auto flex items-center justify-between px-6 py-4 text-[15px] font-sans">
+    <header class="container mx-auto flex items-center justify-between px-6 py-4 text-[15px] font-sans">
         <!-- Левая часть: логотип + название -->
         <img src="../assets/header/Лого (2).svg" alt="">
 
@@ -62,17 +61,64 @@
     </header>
 
     <main>
-        <div>
-            <div>
-                <img src="../assets/baic-logo 1.svg" alt="baic">
-                <p>Baic</p>
+        <section class="container mx-auto">
+            <div id="cards-container" class="flex flex-wrap gap-[20px]"></div>
+        </section>
+
+        <section class="container mx-auto flex flex-col justify-center items-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">Авто в наличии</h2>
+
+            <div class="inline-flex rounded-full bg-[#F5F5F5] w-max p-2">
+                <button class="px-6 py-2 text-sm font-medium rounded-full bg-[#202020] text-white focus:outline-none"
+                    type="button">
+                    Новые
+                </button>
+
+                <button
+                    class="px-6 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-gray-900 focus:outline-none"
+                    type="button">
+                    С пробегом
+                </button>
             </div>
-        </div>
+
+
+            <div data-car-container class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-5 py-6">
+
+            </div>
+            <a href="#"
+                class="w-full cursor-poiunter mt-8 block w-full py-4 bg-[#F90000] text-white font-bold text-center rounded-full hover:bg-red-600 transition">
+                Смотреть еще авто
+            </a>
+        </section>
+
+
+        <section class="container mx-auto">
+            <div class="bg-[#202020] rounded-3xl p-[40px] flex items-center justify-between">
+                <div class="w-1/2">
+                    <h2 class="text-white text-[40px] font-regular mb-4">Не нашли нужный авто?</h2>
+                    <p class="text-gray-300 text-[16px] mb-6">Доставим любую марку из-за границы под ключ!</p>
+                    <button
+                        class="bg-[#F90000] hover:bg-red-600 text-white font-medium py-3 px-6 rounded-full transition duration-300">
+                        Оставить заявку
+                    </button>
+                </div>
+                <div class="w-1/2 relative">
+                    <!-- Изображения автомобилей -->
+                    <div class="relative">
+                        <img src="../assets/banners/Group 43023 (1).png" alt="Car 1"
+                            class="absolute right-0 top-0 transform rotate-[-10deg] w-1/2">
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer></footer>
 
     <script src="https://unpkg.com/imask"></script>
+    <script src="../scripts/modules/iterations/brand.js"></script>
+    <script src="../scripts/modules/iterations/cars.js"></script>
 </body>
 
 </html>

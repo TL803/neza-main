@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О компании</title>
+
+    <!-- Подключаем шрифт Aeonik... от Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Aeonik...:wght@300;400;500;600;700&display=swap">
+
+    <!-- Подключаем Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/slider.css">
+    <link rel="stylesheet" href="../style/checkbox.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066cc',
+                        customGray: '#1a1a1a',
+                        lightGray: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Aeonik', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans  text-[#01101B]">
+
+    <header class="container mx-auto flex items-center justify-between px-6 py-4 text-[15px] font-sans">
+        <div class="flex items-center space-x-2">
+            <img src="../assets/header/Лого (2).svg" alt="Логотип">
+        </div>
+
+        <!-- Центр: навигация -->
+        <nav class="hidden md:flex space-x-[28px]">
+            <a id="header-buy-dropdown" class="text-black font-medium hover:text-gray-700">Купить</a>
+            <a href="#" class="text-black font-medium hover:text-gray-700">Услуги</a>
+            <a href="#" class="text-black font-medium hover:text-gray-700">Сервис</a>
+            <a href="#" class="text-black font-medium hover:text-gray-700">Контакты</a>
+        </nav>
+
+
+        <!-- Правая часть: телефоны + кнопка -->
+        <div class="flex items-center space-x-6">
+            <!-- Телефон 1 -->
+            <div class="flex items-center space-x-2">
+                <img src="../assets/header/Vector (9).svg" alt="Телефон" class="h-5 w-5">
+                <div class="flex flex-col">
+                    <a href="tel:+74951494161" class="text-[#141414] font-medium">+7 (495) 149 41 61</a>
+                    <span class="text-xs text-gray-500">Марьино</span>
+                </div>
+            </div>
+
+            <!-- Телефон 2 -->
+            <div class="flex items-center space-x-2">
+                <img src="../assets/header/Vector (9).svg" alt="Телефон" class="h-5 w-5">
+                <div class="flex flex-col">
+                    <a href="tel:+74953088040" class="text-[#141414] font-medium">+7 (495) 308 80 40</a>
+                    <span class="text-xs text-gray-500">Фили</span>
+                </div>
+            </div>
+
+            <!-- Кнопка -->
+            <button class="bg-[#F90000] text-white px-6 py-2.5 rounded-full font-medium whitespace-nowrap">
+                Оставить заявку
+            </button>
+        </div>
+    </header>
+
+    <main class="space-y-10 mb-10">
+        <section class="container mx-auto">
+            <div id="cards-container" class="flex flex-wrap gap-[20px]"></div>
+        </section>
+
+        <section class="container mx-auto flex flex-col justify-center items-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">Авто в наличии</h2>
+
+            <div class="inline-flex rounded-full bg-[#F5F5F5] w-max p-2">
+                <button class="px-6 py-2 text-sm font-medium rounded-full bg-[#202020] text-white focus:outline-none"
+                    type="button">
+                    Новые
+                </button>
+
+                <button
+                    class="px-6 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-gray-900 focus:outline-none"
+                    type="button">
+                    С пробегом
+                </button>
+            </div>
+
+
+            <div data-car-container class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-5 py-6">
+
+            </div>
+            <a href="#"
+                class="w-full cursor-poiunter mt-8 block w-full py-4 bg-[#F90000] text-white font-bold text-center rounded-full hover:bg-red-600 transition">
+                Смотреть еще авто
+            </a>
+        </section>
+
+
+        <section class="container mx-auto overflow-hidden">
+            <div class="bg-[#202020] rounded-3xl p-[40px] flex items-center justify-between">
+                <div class="w-1/2">
+                    <h2 class="text-white text-[40px] font-regular mb-4">Не нашли нужный авто?</h2>
+                    <p class="text-gray-300 text-[16px] mb-6">Доставим любую марку из-за границы под ключ!</p>
+                    <button
+                        class="bg-[#F90000] hover:bg-red-600 text-white font-medium py-3 px-6 rounded-full transition duration-300">
+                        Оставить заявку
+                    </button>
+                </div>
+                <div class="w-1/2 relative ">
+                    <div class="relative">
+                        <img src="../assets/banners/Group 43023 (1).png" alt="Car 1"
+                            class="absolute right-0 -top-20 transform rotate-[-10deg] w-full">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container mx-auto flex flex-col justify-center items-center py-10 px-4">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">Услуги</h2>
+            <p class="text-[20px] font-normal text-center max-w-2xl mb-8">
+                Мы рады предложить вам полный спектр услуг для комфортного приобретения автомобиля
+            </p>
+
+            <!-- Слайдер -->
+            <div class="w-full relative">
+                <!-- Контейнер для карточек -->
+                <div class="w-full overflow-hidden">
+                    <div id="service-slider" class="flex transition-transform duration-300 ease-in-out">
+                        <!-- Карточки будут добавляться сюда -->
+                    </div>
+                </div>
+
+                <!-- Навигационные стрелки -->
+                <div class="flex justify-center space-x-4 mt-8">
+                    <button id="prev-btn"
+                        class="w-10 h-10 border-2 border-red-500 rounded-full flex items-center justify-center text-red-500 hover:bg-red-50 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button id="next-btn"
+                        class="w-10 h-10 border-2 border-red-500 rounded-full flex items-center justify-center text-[#F90000] hover:bg-red-50 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-4 container mx-auto bg-white">
+            <h2 class="text-2xl font-bold text-center mb-8">Сервис</h2>
+
+            <div id="offers-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            </div>
+        </section>
+
+
+        <section
+            class="bg-gray-50 rounded-xl p-6 container mx-auto md:p-8 flex flex-col md:flex-row justify-center items-center gap-8 relative overflow-hidden min-h-[320px] md:min-h-[360px]">
+
+            <div class="flex-shrink-0 absolute -left-20 -bottom-20">
+                <img src="../assets/banners/Frame 2087326609.png" alt="Механик с инструментом"
+                    class=" w-[600px] h-auto">
+            </div>
+
+            <div class="relative z-10">
+                <h2 class="text-2xl md:text-[32px] font-medium text-gray-800 mb-2">
+                    Тест-драйв сервиса<br>по выгодной цене!
+                </h2>
+                <p class="text-gray-600 text-[16px] font-regular mb-6">
+                    Дарим скидку 50% на работу при первом визите
+                </p>
+                <button class="bg-[#F90000] hover:bg-red-600 text-white px-6 py-3 rounded-2xl font-medium transition">
+                    Записаться!
+                </button>
+            </div>
+
+            <img class="absolute w-[300px] -top-5 -right-5 z-0" src="../assets/banners/label-icon 1.png" alt="">
+        </section>
+
+
+        <div class=" mx-auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">О компании</h2>
+                <div class="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                    «Независимость» — ваш надёжный партнёр в выборе автомобиля
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 container mx-auto">
+
+                <!-- Левый блок -->
+                <div class="rounded-2xl p-8 bg-[#F6F6F6] border border-gray-100">
+                    <img src="../assets/salons/Rectangle 96.png" alt="Автосалон Береговой"
+                        class="w-full h-64 object-cover rounded-xl mb-6">
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-900">Москва, Береговой проезд, 4/6с3</span>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 block">+7 495 266 72 19</span>
+                                <span class="text-sm text-gray-500">Отдел продаж</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 block">+7 (495) 649 69 20</span>
+                                <span class="text-sm text-gray-500">Отдел сервиса</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правый блок -->
+                <div class="bg-[#F6F6F6] rounded-2xl p-8  border border-gray-100">
+                    <img src="../assets/salons/Rectangle 76.png" alt="Автосалон Перерва"
+                        class="w-full h-64 object-cover rounded-xl mb-6">
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-900">Москва, ул. Перерва, 19, стр. 3</span>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 block">+7 495 266 72 19</span>
+                                <span class="text-sm text-gray-500">Отдел продаж</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-0..5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-600" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-gray-700 block">+7 (495) 649 69 20</span>
+                                <span class="text-sm text-gray-500">Отдел сервиса</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-12 md:py-20 bg-[#F6F6F6] rounded-3xl">
+            <!-- Первая строка -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+                <!-- Преимущество 1 -->
+                <div class="flex items-start space-x-3 p-4 md:p-6 rounded-lg transition-all duration-300 ">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border border-gray-300 bg-white shadow-sm overflow-hidden">
+                        <img src="../assets/advantages/Vector-4.svg" alt="Доставка" class="w-6 h-6 md:w-8 md:h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Доставка по Москве и
+                            МО</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">— вы получаете автомобиль там, где вам удобно.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Преимущество 2 -->
+                <div class="flex items-start space-x-3 p-4 md:p-6 rounded-lg transition-all duration-300 ">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border border-gray-300 bg-white shadow-sm overflow-hidden">
+                        <img src="../assets/advantages/mdi_hours-24.svg" alt="Выдача авто"
+                            class="w-6 h-6 md:w-8 md:h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Выдача автомобиля в
+                            течение 24 часов</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">— быстро, без задержек и лишней бюрократии.</p>
+                    </div>
+                </div>
+
+                <!-- Преимущество 3 -->
+                <div class="flex items-start space-x-3 p-4 md:p-6 rounded-lg transition-all duration-300">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border border-gray-300 bg-white shadow-sm overflow-hidden">
+                        <img src="../assets/advantages/Vector-3.svg" alt="Банки" class="w-6 h-6 md:w-8 md:h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Более 20
+                            банков-партнёров</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">— поможем оформить кредит или лизинг на
+                            выгодных условиях.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вторая строка -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Преимущество 4 -->
+                <div class="flex items-start space-x-3 p-4 md:p-6 rounded-lg transition-all duration-300">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border border-gray-300 bg-white shadow-sm overflow-hidden">
+                        <img src="../assets/advantages/Vector-2.svg" alt="Выбор авто" class="w-6 h-6 md:w-8 md:h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Широкий выбор авто
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">— новые и с пробегом, в наличии онлайн и в
+                            автосалонах.</p>
+                    </div>
+                </div>
+
+                <!-- Преимущество 5 -->
+                <div class="flex items-start space-x-3 p-4 md:p-6 rounded-lg transition-all duration-300">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border border-gray-300 bg-white shadow-sm overflow-hidden">
+                        <img src="../assets/advantages/Vector-1.svg" alt="Топ-3 дилер" class="w-6 h-6 md:w-8 md:h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Входим в топ-3 дилеров
+                            России</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">по продажам брендов KAIYI, SWM, DONGFENG,
+                            LIVAN.</p>
+                    </div>
+                </div>
+
+                <!-- Преимущество 6 -->
+                <div class="flex items-start space-x-3 p-4 md:p-6 rounded-lg transition-all duration-300">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center border border-gray-300 bg-white shadow-sm overflow-hidden">
+                        <img src="../assets/advantages/Vector.svg" alt="Сервис 24/7" class="w-6 h-6 md:w-8 md:h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-2 md:mb-3">Сервис 24/7</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Чтобы оставаться рядом в любую минуту.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto p-6 md:p-10 rounded-xl bg-[#202020] shadow-lg relative overflow-hidden">
+            <div class="absolute inset-0 z-0 right-0 opacity-15 flex justify-end pointer-events-none">
+                <div class="w-1/2 h-full   grid grid-cols-3 grid-rows-4 gap-6 p-6">
+                    <!-- Row 1 -->
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/baic-logo 1 (1).svg"
+                            alt="BAIC" class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img
+                            src="../assets/logosBrand/Bt8xpE__white-logo-with-transparency-background.png 1.svg"
+                            alt="LIVAN" class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/Component 2.svg"
+                            alt="KAIYI" class="h-8 md:h-10 mx-auto"></div>
+
+                    <!-- Row 2 -->
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/Group 42989.svg"
+                            alt="SWM" class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img
+                            src="../assets/logosBrand/Livan_Automotive_logo 1.svg" alt="DONGFENG"
+                            class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/logo 1.svg" alt="MG"
+                            class="h-8 md:h-10 mx-auto"></div>
+
+                    <!-- Row 3 -->
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/oting 1.svg"
+                            alt="OTING" class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/Traced Image.svg"
+                            alt="ROX" class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/Vector (11).svg"
+                            alt="BESTUNE" class="h-8 md:h-10 mx-auto"></div>
+
+                    <!-- Row 4 -->
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/Vector (12).svg"
+                            alt="SOLARIS" class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img src="../assets/logosBrand/Vector (13).svg"
+                            alt="SOU EAST" class="h-8 md:h-10 mx-auto"></div>
+                    <div class="flex items-center justify-center"><img
+                            src="../assets/logosBrand/NfRWAy__sqgvkg-logo-evolute 1 (1).svg" alt="EVOLUTЕ"
+                            class="h-8 md:h-10 mx-auto"></div>
+                </div>
+            </div>
+            <!-- Основной контент -->
+            <div class="relative z-10">
+                <div class="flex items-start gap-6 mb-8">
+                    <div class="flex-1">
+                        <img src="../assets/Group 42962.svg" alt="Логотип Независимость" class="shrink-0 mb-4" />
+                        <h1 class="text-2xl md:text-3xl text-white font-bold mb-4 leading-tight">
+                            «Независимость» - официальный дилер<br />
+                            <span class="text-3xl md:text-4xl">14 брендов</span>
+                        </h1>
+                        <p class="text-sm md:text-base text-white leading-relaxed max-w-xl opacity-90">
+                            Компания Независимость предоставляет широкий спектр услуг для автовладельцев. Мы занимаемся
+                            продажей и выкупом автомобилей, а также предлагаем сервисное обслуживание, запасные части и
+                            аксессуары к автомобилям.
+                        </p>
+                        <button
+                            class="mt-6 px-8 py-3 bg-[#F90000] hover:bg-red-700 text-white font-medium rounded-full transition-colors duration-200">
+                            Смотреть авто
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="container mx-auto p-4 md:p-6 bg-white">
+
+            <!-- Заголовок -->
+            <h1 class="text-2xl md:text-[35px] font-medium mb-6">Lada Largus Универсал 5 дв.</h1>
+
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Левая часть: изображение и характеристики -->
+                <div class="lg:w-1/3">
+                    <!-- Изображение автомобиля -->
+                    <div class="relative mb-6 bg-[#F6F6F6] rounded-xl">
+                        <img src="../assets/auto/535711a9672a5098e3b581ac6e73a79c9d975861.png"
+                            alt="Lada Largus Универсал" class="w-full rounded-lg object-cover h-64 md:h-80" />
+                        <div
+                            class="absolute top-4 right-4 bg-white text-[#1B1B1B] font-bold px-3 py-1 rounded-full text-sm">
+                            Выгода 800 000₽
+                        </div>
+                    </div>
+
+
+
+                    <div class="flex flex-col  gap-3">
+                        <button
+                            class="bg-[#F90000] hover:bg-red-700 text-white font-medium py-3 px-6 rounded-full transition">
+                            Рассчитать кредит
+                        </button>
+                        <button
+                            class="bg-[#202020] hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-full transition">
+                            Купить в Trade-in
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/3">
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <div>
+                                <p class="text-[16px] text-gray-500">Мощность</p>
+                                <p class="font-medium ">90 л.с.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l2 2L16 14v2h-2v-2l-1-1H9l-1 1v2H6v-2l-1-1-2-2A2 2 0 003 9.172V5L2 4h6z" />
+                            </svg>
+                            <div>
+                                <p class="text-[16px] text-gray-500">Расход на 100 км</p>
+                                <p class="font-medium">7.3 л</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <p class="text-[16px] text-gray-500">Разгон до 100 км</p>
+                                <p class="font-medium">14 сек.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <div>
+                                <p class="text-[16px] text-gray-500">Макс. скорость</p>
+                                <p class="font-medium">160 км/ч</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Выбор цвета -->
+                    <div class="mb-6">
+                        <p class="text-sm font-medium mb-2">Цвет кузова</p>
+                        <div class="flex gap-2">
+                            <div class="w-[49px] h-[39px] rounded-lg bg-red-500 border-2 border-white shadow"></div>
+                            <div class="w-[49px] h-[39px] rounded-lg bg-red-500 border-2 border-white shadow"></div>
+                            <div class="w-[49px] h-[39px] rounded-lg bg-red-500 border-2 border-white shadow"></div>
+                            <div class="w-[49px] h-[39px] rounded-lg bg-red-500 border-2 border-white shadow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Цена и кнопки -->
+                    <div class="mb-4">
+                        <p class="text-black text-[18px]">Кредит от <span class="font-bold">5 670 ₽/мес.</span></p>
+                        <p class="text-[36px] font-regular text-black mt-1">от 747 000 ₽</p>
+                    </div>
+                </div>
+                <!-- Правая часть: форма кредита -->
+                <div class="lg:w-1/3 bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-[24px] font-regular mb-3">Оформить в кредит</h2>
+                    <p class="text-black font-regular text-[12px] mb-4">
+                        Оставьте заявку и наш менеджер перезвонит вам, чтобы подобрать машину под ваши задачи и бюджет
+                    </p>
+
+
+                    <form class="space-y-4 ">
+                        <div>
+                            <label for="phone" class="block text-[15px] font-regular text-[#575757] mb-1">Телефон</label>
+                            <input type="tel" id="phone" placeholder="+7 (___) ___-__-__"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                        </div>
+                        <div>
+                            <label for="name" class="block text-[15px] font-regular text-[#575757] mb-1">Ваше имя</label>
+                            <input type="text" id="name" placeholder="Иван Иванов"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                        </div>
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy" class="mt-1 mr-2 h-4 w-4 text-red-600 rounded"
+                                required />
+                            <label for="privacy" class="text-[12px] text-gray-600">
+                                Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с
+                                <a href="#" class="text-red-600 underline">политикой конфиденциальности</a>
+                            </label>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-[#F90000] hover:bg-red-700 text-white font-medium py-3 rounded-lg transition">
+                            Получить предложение
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#202020] text-white pt-12 pb-8 px-6">
+
+        <!-- Блок заявки -->
+        <div class="w-full mx-auto">
+            <div class="mb-12 container mx-auto border-b border-gray-700 pb-8">
+                <h2 class="text-[35px] text-[#868686] font-medium mb-2">Мне интересно</h2>
+                <h3 class="text-[35px] text-white font-medium mb-4">Хочу персональное предложение</h3>
+                <p class="text-[16px] text-gray-300 mb-6">Оставьте заявку и мы свяжемся с вами в ближайшее время</p>
+
+                <!-- Форма — ЦЕНТРИРОВАНА, как на макете -->
+                <div class="flex justify-end">
+                    <form class="flex flex-col md:flex-row gap-4 w-full w-max">
+                        <input type="text" placeholder="Ваше имя"
+                            class="bg-[#161616] border border-[#808080] rounded-full px-4 py-2 flex-1 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors" />
+                        <input type="tel" placeholder="Телефон"
+                            class="bg-[#161616] border border-[#808080] rounded-full px-4 py-2 flex-1 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors" />
+                        <button type="submit"
+                            class="bg-[#F90000] hover:bg-red-700 text-white font-medium rounded-full px-6 py-2 whitespace-nowrap transition-colors">
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Текст соглашения — выровнен по левому краю относительно формы -->
+                <div class="mt-4 pl-4  flex justify-end ">
+                    <p class="text-xs text-gray-400 max-w-xl text-left">
+                        Нажимая на кнопку «Отправить», я даю согласие на использование моих персональных данных и
+                        <a href="#" class="underline hover:text-gray-300 transition-colors">Условия политики
+                            конфиденциальности</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col container mx-auto lg:flex-row gap-8 mb-12">
+            <div class="flex-1 space-y-8">
+                <div>
+                    <p class="font-regular text-[20px] mb-1">Москва,<br>Береговой проезд, 4/6с3</p>
+                    <p class="text-[16px] mb-2">09:00-20:00</p>
+                    <div class="flex items-center text-[12px] mb-2 space-x-2">
+                        <img src="../assets/user-light.svg" alt="">
+                        <span>Отдел продаж</span>
+                    </div>
+                    <p class="text-[35px] font-regular mb-2">+7 495 266 72 19</p>
+                    <div class="flex items-center text-xs mb-1 space-x-2">
+                        <img src="../assets/user-light.svg" alt="">
+                        <span>Отдел сервиса</span>
+                    </div>
+                    <p class="text-sm">+7 (495) 649 69 20</p>
+                </div>
+
+                <!-- Второй адрес -->
+                <div>
+                    <p class="font-medium mb-1">Москва,<br>ул. Перерва, 19, стр. 3</p>
+                    <p class="text-sm mb-2">09:00-20:00</p>
+                    <div class="flex items-center text-xs mb-2 space-x-2">
+                        <img src="../assets/user-light.svg" alt="">
+                        <span>Отдел продаж</span>
+                    </div>
+                    <p class="text-[35px] font-regular mb-2">+7 495 149 41 61</p>
+                    <div class="flex items-center text-xs mb-1 space-x-2">
+                        <img src="../assets/user-light.svg" alt="">
+
+                        <span>Отдел сервиса</span>
+                    </div>
+                    <p class="text-sm">+7 (495) 649 69 20</p>
+                </div>
+            </div>
+
+            <div class="flex-1">
+                <div class="relative h-[450px] bg-gray-800 rounded-lg overflow-hidden">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab9a9f08ee045009e64b43ec469c590e98796fc428566d6881ec6125bd28e018b&amp;source=constructor"
+                        width="100%" height="100%" frameborder="0" class="absolute inset-0 w-full h-full border-none"
+                        allowfullscreen="" loading="lazy"></iframe>
+
+                    <div class="absolute inset-0 bg-gray-800 bg-opacity-40 pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер навигации -->
+        <div class="flex container mx-auto flex-col lg:flex-row justify-between gap-8 mb-8">
+            <!-- Колонка "Купить" -->
+            <div>
+                <h4 class="text-sm font-medium mb-3">Купить</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Новые автомобили</a></li>
+                    <li><a href="#" class="hover:underline">Автомобили с пробегом</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка "Услуги" -->
+            <div>
+                <h4 class="text-sm font-medium mb-3">Услуги</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Кредитование</a></li>
+                    <li><a href="#" class="hover:underline">Лизинг</a></li>
+                    <li><a href="#" class="hover:underline">Страхование</a></li>
+                    <li><a href="#" class="hover:underline">Выкуп</a></li>
+                    <li><a href="#" class="hover:underline">Обмен/ Trade-In</a></li>
+                    <li><a href="#" class="hover:underline">Сервис</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка "О компании" -->
+            <div>
+                <h4 class="text-sm font-medium mb-3">О компании</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Кнопка связи и соцсети — справа -->
+            <div class="flex flex-row items-start lg:items-end gap-4">
+                <button class="bg-[#F90000] hover:bg-red-700 text-white font-medium rounded-xl px-6 py-2">
+                    Связаться с нами
+                </button>
+                <div class="flex flex-col space-y-4">
+                    <a href="#" class="text-red-500 hover:text-red-400">
+                        <img src="../assets/social/Vector-1.svg" alt="">
+                    </a>
+                    <a href="#" class="text-red-500 hover:text-red-400">
+                        <img src="../assets/social/Vector-2.svg" alt="">
+
+                    </a>
+                    <a href="#" class="text-red-500 hover:text-red-400">
+                        <img src="../assets/social/Clip path group.svg" alt="">
+
+                    </a>
+                    <a href="#" class="text-red-500 hover:text-red-400">
+                        <img src="../assets/social/Vector.svg" alt="">
+
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Юридический текст -->
+        <div class="border-t container mx-auto border-gray-700 pt-6 text-xs space-y-4">
+            <p class="text-gray-400">
+                Данный веб-сайт носит исключительно информационный характер и ни при каких условиях не является
+                публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ.
+                Для получения подробной информации о наличии и стоимости указанных товаров и (или) услуг, пожалуйста,
+                обращайтесь к менеджерам отдела продаж.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="text-gray-400 hover:underline">Политика обработки персональных данных</a>
+                    <a href="#" class="text-gray-400 hover:underline">Правила оказания услуг для юридических лиц</a>
+                </div>
+                <div class="text-gray-400">
+                    ООО "Кукушка", ОГРН: 11377462433333, ИНН: 234234234234234, КПП: 770101001
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/imask"></script>
+    <script src="../scripts/modules/iterations/brand.js"></script>
+    <script src="../scripts/modules/iterations/cars.js"></script>
+    <script src="../scripts/modules/iterations/service.js"></script>
+    <script src="../scripts/modules/iterations/offers.js"></script>
+
+    <script>
+        const buyDropDown = document.getElementById('header-buy-dropdown')
+
+        buyDropDown.addEventListener('click', () => {
+            const dropDown = document.createElement('div');
+            dropDown.className = 'absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-lg z-10 hidden';
+            dropDown.innerHTML = `
+  <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-800 hover:bg-gray-50 no-underline">Новые автомобили</a>
+  <hr class="border-t border-gray-200 my-0">
+  <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-800 hover:bg-gray-50 no-underline">Автомобили с пробегом</a>
+`;
+        })
+    </script>
+</body>
+
+</html>
